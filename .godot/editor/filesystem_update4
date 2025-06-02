@@ -8,3 +8,5 @@ res://GameModules/Player/MovementStates/upright/upright_walk.tres
 res://GameModules/Player/MovementStates/upright/upright_run.tres
 res://GameModules/Player/MovementStates/upright/upright_sprint.tres
 res://GameModules/Player/MovementStates/crouch/crouch_idle.tres
+res://GameModules/Player/Player.gd
+res://GameModules/Player/godot_chan_4.tscn

@@ -35,10 +35,10 @@ func _input(event):
 				if current_stance_name == "stealth":
 					set_stance("upright")
 			else:
-				if Input.is_action_pressed("walk"):
-					set_movement_state("walk")
-				else:
+				if Input.is_action_pressed("walk"):  # Now "walk" key makes you RUN
 					set_movement_state("run")
+				else:
+					set_movement_state("walk")  # Default is now WALK
 		else:
 			set_movement_state("stand")
 	
@@ -60,8 +60,9 @@ func _input(event):
 			air_jump_counter += 1
 	
 	if is_on_floor():
+		print("Available stances: ", stances.keys())  # Debug line
 		for stance in stances.keys():
-			if event.is_action_pressed(stance):
+			if InputMap.has_action(stance) and event.is_action_pressed(stance):
 				set_stance(stance)
 
 
@@ -114,6 +115,3 @@ func set_stance(_stance_name : String):
 func is_stance_blocked(_stance_name : String) -> bool:
 	var stance = get_node(stances[_stance_name])
 	return stance.is_blocked()
-
-
-
