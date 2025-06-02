@@ -6,6 +6,6 @@
 script = ExtResource("1_ena61")
 id = 3
 movement_speed = 12.0
-acceleration = 4.0
-camera_fov = 85.0
+acceleration = 20.0
+camera_fov = 40.0
 animation_speed = 1.5

@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://c4sa6c60r1myd"]
+[gd_scene load_steps=51 format=3 uid="uid://c4sa6c60r1myd"]
 
 [ext_resource type="Script" uid="uid://dkxca73w5r488" path="res://GameModules/Player/Player.gd" id="1_phkkc"]
 [ext_resource type="Script" uid="uid://bb8htr7kgmjbb" path="res://GameModules/Player/movement_controller.gd" id="1_t2242"]
@@ -17,8 +17,6 @@
 [ext_resource type="Resource" uid="uid://dhetjuk4dx6ke" path="res://GameModules/Player/MovementStates/stealth/stealth_idle.tres" id="15_m84se"]
 [ext_resource type="Resource" uid="uid://f75acjtq1s1p" path="res://GameModules/Player/MovementStates/stealth/stealth_walk.tres" id="16_xm8tb"]
 [ext_resource type="Resource" uid="uid://b8gxgwxgcffn3" path="res://GameModules/Player/MovementStates/crouch/crouch_idle.tres" id="17_ynjdi"]
-[ext_resource type="Resource" uid="uid://chlo73epqnjv5" path="res://GameModules/Player/MovementStates/crouch/crouch_walk.tres" id="18_vwyu4"]
-[ext_resource type="Resource" uid="uid://b6d3nd27lewdo" path="res://GameModules/Player/MovementStates/crouch/crouch_sprint.tres" id="19_2iu4e"]
 [ext_resource type="Resource" uid="uid://ciavsiq3ylqo" path="res://GameModules/Player/MovementStates/prone/prone_idle.tres" id="20_cyelw"]
 [ext_resource type="Resource" uid="uid://damtko06ahl05" path="res://GameModules/Player/MovementStates/prone/prone_walk.tres" id="21_6kssw"]
 [ext_resource type="Resource" uid="uid://bpn08dfev0uoe" path="res://GameModules/Player/MovementStates/prone/prone_sprint.tres" id="22_g338h"]
@@ -328,9 +326,9 @@ col_raycast = NodePath("../../UprightCollision/RayCast3D")
 [node name="crouch" type="Node" parent="Player/Stances" node_paths=PackedStringArray("collider", "col_raycast", "higher_stances")]
 script = ExtResource("10_lv0cd")
 idle_state = ExtResource("17_ynjdi")
-walk_state = ExtResource("18_vwyu4")
-run_state = ExtResource("18_vwyu4")
-sprint_state = ExtResource("19_2iu4e")
+walk_state = ExtResource("17_ynjdi")
+run_state = ExtResource("17_ynjdi")
+sprint_state = ExtResource("17_ynjdi")
 camera_height = 0.85
 collider = NodePath("../../CrouchCollision")
 col_raycast = NodePath("../../CrouchCollision/RayCast3D")
@@ -352,21 +350,21 @@ higher_stances = [NodePath("../crouch"), NodePath("../stealth"), NodePath("../up
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="Skeleton3D" parent="Player/MeshRoot/godot_chan_4/Godot_Chan" index="0"]
-bones/0/position = Vector3(3.9726e-08, 0.1164, -7.9654)
+bones/0/position = Vector3(2.5907e-08, -0.199742, -8.21176)
 bones/1/rotation = Quaternion(0.652857, 0.271621, 0.652857, -0.271621)
 bones/2/position = Vector3(-8.87776e-12, 4.51278, 0.000287311)
 bones/2/rotation = Quaternion(0.59418, -4.17457e-10, 1.97743e-08, 0.804332)
 bones/3/position = Vector3(4.90622e-14, 5.69653, -0.00010035)
 bones/3/rotation = Quaternion(-0.117439, -6.02047e-10, 1.68026e-09, 0.99308)
 bones/4/position = Vector3(1.38778e-14, 7.21845, -1.14151e-05)
-bones/4/rotation = Quaternion(-0.156091, 6.86341e-10, -9.5321e-10, 0.987743)
+bones/4/rotation = Quaternion(-0.14859, 6.86401e-10, -9.53295e-10, 0.988899)
 bones/5/rotation = Quaternion(0.0034532, 0.00659531, -0.689901, 0.723865)
 bones/5/scale = Vector3(1, 1, 1)
 bones/6/position = Vector3(0.000202688, 10.6318, -7.59092e-05)
-bones/6/rotation = Quaternion(-0.0805069, 0.170964, -0.566469, 0.802124)
+bones/6/rotation = Quaternion(-0.0795816, 0.171445, -0.570239, 0.799438)
 bones/6/scale = Vector3(1, 1, 1)
 bones/7/position = Vector3(-0.000310951, 19.8107, 9.49435e-05)
-bones/7/rotation = Quaternion(0.254689, -0.449544, -0.163488, 0.840426)
+bones/7/rotation = Quaternion(0.261774, -0.450905, -0.165807, 0.837058)
 bones/8/position = Vector3(6.13972e-05, 18.4529, -1.79678e-05)
 bones/8/rotation = Quaternion(0.121656, 0.740931, -0.0153585, 0.660292)
 bones/9/position = Vector3(-1.22998, 8.21134, 0.541574)
@@ -411,9 +409,9 @@ bones/23/scale = Vector3(1, 1, 1)
 bones/24/rotation = Quaternion(0.00345325, -0.00659526, 0.689901, 0.723865)
 bones/24/scale = Vector3(1, 1, 1)
 bones/25/position = Vector3(-0.000210236, 10.6318, -7.73641e-05)
-bones/25/rotation = Quaternion(-0.190835, 0.0965843, 0.56132, 0.799483)
+bones/25/rotation = Quaternion(-0.191103, 0.095719, 0.564531, 0.797259)
 bones/26/position = Vector3(0.000305885, 19.8107, 9.93949e-05)
-bones/26/rotation = Quaternion(0.136648, 0.421705, 0.212448, 0.870838)
+bones/26/rotation = Quaternion(0.141865, 0.423176, 0.218049, 0.8679)
 bones/27/position = Vector3(-5.59034e-05, 18.4529, -2.43276e-05)
 bones/27/rotation = Quaternion(0.101894, -0.868841, 0.0345363, 0.48326)
 bones/27/scale = Vector3(1, 1, 1)
@@ -453,21 +451,21 @@ bones/41/scale = Vector3(1, 1, 1)
 bones/42/position = Vector3(-0.000197773, 2.81332, 0.000139418)
 bones/42/rotation = Quaternion(0.107196, -0.156159, -0.103579, 0.976419)
 bones/42/scale = Vector3(1, 1, 1)
-bones/43/rotation = Quaternion(0.19809, -1.16117e-09, 2.54317e-09, 0.980184)
+bones/43/rotation = Quaternion(0.187292, -1.16135e-09, 2.54357e-09, 0.982304)
 bones/44/position = Vector3(-3.10862e-15, 9.35612, 0.000138467)
 bones/44/rotation = Quaternion(-0.172072, -1.35244e-15, 0, 0.985084)
-bones/45/rotation = Quaternion(0.929705, 0.187283, -0.277171, -0.154109)
+bones/45/rotation = Quaternion(0.931255, 0.184395, -0.279101, -0.144446)
 bones/46/position = Vector3(4.13436e-06, 32.5686, -7.47821e-05)
-bones/46/rotation = Quaternion(0.14258, 0.218286, -0.0049998, 0.9654)
-bones/47/rotation = Quaternion(-0.444025, 0.101381, 0.0787542, 0.88677)
+bones/46/rotation = Quaternion(0.155724, 0.220912, -0.011349, 0.962714)
+bones/47/rotation = Quaternion(-0.446968, 0.100828, 0.0789209, 0.885339)
 bones/47/scale = Vector3(1, 1, 1)
 bones/48/rotation = Quaternion(-0.268793, 0.0202766, 0.0276453, 0.962588)
 bones/49/position = Vector3(-7.9319, -2.35348, -1.35573)
-bones/49/rotation = Quaternion(0.849243, -0.255772, 0.301708, -0.34977)
-bones/50/rotation = Quaternion(0.149265, -0.376468, 0.0284223, 0.913884)
+bones/49/rotation = Quaternion(0.85497, -0.250694, 0.305941, -0.335528)
+bones/50/rotation = Quaternion(0.174371, -0.372739, 0.0421624, 0.91043)
 bones/50/scale = Vector3(1, 1, 1)
 bones/51/position = Vector3(-0.000429504, 31.1547, -1.11843e-05)
-bones/51/rotation = Quaternion(-0.648327, 0.00394011, -0.0299194, 0.760764)
+bones/51/rotation = Quaternion(-0.657923, 0.000599135, -0.0397945, 0.752033)
 bones/51/scale = Vector3(1, 1, 1)
 bones/52/position = Vector3(0.000456973, 9.98217, 6.83495e-05)
 
@@ -502,7 +500,7 @@ player = NodePath("..")
 transform = Transform3D(1, 0, 2.98023e-08, 0, 0.949655, -0.313296, 0, 0.313296, 0.949655, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player/CamRoot/CamYaw/CamPitch"]
-transform = Transform3D(-1, -2.66454e-15, -5.76205e-08, -1.77636e-15, 1, 0, 8.74229e-08, 0, -1, -0.104642, -0.429463, -5.73947)
+transform = Transform3D(-1, -2.66454e-15, -5.76205e-08, -1.77636e-15, 1, 0, 8.74229e-08, 0, -1, -0.104642, -0.429463, -14.8726)
 current = true
 fov = 25.4
 

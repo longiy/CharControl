@@ -43,7 +43,7 @@ func _on_set_movement_state(_movement_state : MovementState):
 		tween.kill()
 	
 	tween = create_tween()
-	tween.tween_property(camera, "fov", _movement_state.camera_fov, 0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(camera, "fov", _movement_state.camera_fov, 2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
 func _on_set_stance(_stance : Stance):
 	position_offset_target.y = _stance.camera_height

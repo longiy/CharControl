@@ -6,6 +6,6 @@
 script = ExtResource("1_8xqoo")
 id = 0
 movement_speed = 0.0
-acceleration = 6.0
-camera_fov = 70.0
+acceleration = 20.0
+camera_fov = 25.0
 animation_speed = 1.0
