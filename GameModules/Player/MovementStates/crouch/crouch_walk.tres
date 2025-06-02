@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_wtqck")
 id = 1
-movement_speed = 1.2
+movement_speed = 0.0
 acceleration = 7.0
 camera_fov = 70.0
 animation_speed = 1.0
