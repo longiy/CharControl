@@ -3,8 +3,7 @@ signal set_cam_rotation(_cam_rotation : float)
 @export var player : CharacterBody3D
 @onready var yaw_node = $CamYaw
 @onready var pitch_node = $CamYaw/CamPitch
-@onready var spring_arm = $CamYaw/CamPitch/SpringArm3D
-@onready var camera = $CamYaw/CamPitch/SpringArm3D/Camera3D
+@onready var camera = $CamYaw/CamPitch/Camera3D
 var yaw : float = 0
 var pitch : float = 0
 var yaw_sensitivity : float = 0.07
@@ -19,7 +18,6 @@ var position_offset_target : Vector3 = Vector3(0, 1.3, 0)
 
 func _ready():
 	# Mouse input disabled - removed Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	spring_arm.add_excluded_object(player.get_rid())
 	top_level = true
 
 func _input(event):
