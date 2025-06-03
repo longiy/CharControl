@@ -5,7 +5,7 @@ class_name Stance
 @export var idle_state : MovementState
 @export var walk_state : MovementState
 @export var run_state : MovementState
-@export var sprint_state : MovementState
+#@export var sprint_state : MovementState
 
 @export_category("Camera Data")
 @export var camera_height : float = 1.3
@@ -29,8 +29,8 @@ func get_movement_state(state_name : String) -> MovementState:
 			return walk_state
 		"run":
 			return run_state
-		"sprint":
-			return sprint_state
+		#"sprint":
+			#return sprint_state
 		_:
 			return idle_state
 	

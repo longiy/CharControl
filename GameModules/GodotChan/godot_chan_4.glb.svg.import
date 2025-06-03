@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqg8hmqoph5rl"
-path="res://.godot/imported/godot_chan_4.glb.svg-d54330699f3e3f95e47bee2f1e80b1e5.ctex"
+path="res://.godot/imported/godot_chan_4.glb.svg-48daef8f2d45bf60b099404909602020.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GameModules/Player/godot_chan_4.glb.svg"
-dest_files=["res://.godot/imported/godot_chan_4.glb.svg-d54330699f3e3f95e47bee2f1e80b1e5.ctex"]
+source_file="res://GameModules/GodotChan/godot_chan_4.glb.svg"
+dest_files=["res://.godot/imported/godot_chan_4.glb.svg-48daef8f2d45bf60b099404909602020.ctex"]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bosarv8fus50d"
-path.s3tc="res://.godot/imported/godot_chan_4_anime_eye1.png-392c8173480706ca9cb085626c0320dd.s3tc.ctex"
+uid="uid://cwk32bkc3dbe5"
+path.s3tc="res://.godot/imported/godot_chan_4_face.png-c761003d3f83c6860488ea8f82ebe892.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://GameModules/Player/godot_chan_4_anime_eye1.png"
-dest_files=["res://.godot/imported/godot_chan_4_anime_eye1.png-392c8173480706ca9cb085626c0320dd.s3tc.ctex"]
+source_file="res://GameModules/GodotChan/godot_chan_4_face.png"
+dest_files=["res://.godot/imported/godot_chan_4_face.png-c761003d3f83c6860488ea8f82ebe892.s3tc.ctex"]
 
 [params]
 

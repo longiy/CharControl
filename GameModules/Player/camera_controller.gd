@@ -26,7 +26,7 @@ func _input(event):
 
 func _physics_process(delta):
 	position_offset = lerp(position_offset, position_offset_target, 4 * delta)
-	global_position = lerp(global_position, player.global_position + position_offset, 18 * delta)
+	global_position = lerp(global_position, player.global_position + position_offset, 5 * delta)
 	
 	# Camera rotation disabled - pitch and yaw remain at 0
 	# pitch = clamp(pitch, pitch_min, pitch_max)

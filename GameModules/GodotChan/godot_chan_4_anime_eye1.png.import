@@ -2,17 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b50o42smb621t"
-path.s3tc="res://.godot/imported/Grid.png-ac9b62bfd1857c36f9ecdf7f35425b89.s3tc.ctex"
+uid="uid://bosarv8fus50d"
+path.s3tc="res://.godot/imported/godot_chan_4_anime_eye1.png-02090ea8b275efc7648a869aed3bb35f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://GameModules/Textures/Grid.png"
-dest_files=["res://.godot/imported/Grid.png-ac9b62bfd1857c36f9ecdf7f35425b89.s3tc.ctex"]
+source_file="res://GameModules/GodotChan/godot_chan_4_anime_eye1.png"
+dest_files=["res://.godot/imported/godot_chan_4_anime_eye1.png-02090ea8b275efc7648a869aed3bb35f.s3tc.ctex"]
 
 [params]
 

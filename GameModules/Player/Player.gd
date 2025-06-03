@@ -30,15 +30,10 @@ func _input(event):
 		movement_direction.z = Input.get_action_strength("forward") - Input.get_action_strength("back")
 		
 		if is_movement_ongoing():
-			if Input.is_action_pressed("sprint"):
-				set_movement_state("sprint")
-				if current_stance_name == "stealth":
-					set_stance("upright")
+			if Input.is_action_pressed("walk"):  # "walk" key makes you RUN
+				set_movement_state("run")
 			else:
-				if Input.is_action_pressed("walk"):  # Now "walk" key makes you RUN
-					set_movement_state("run")
-				else:
-					set_movement_state("walk")  # Default is now WALK
+				set_movement_state("walk")  # Default is WALK
 		else:
 			set_movement_state("stand")
 	
@@ -60,7 +55,6 @@ func _input(event):
 			air_jump_counter += 1
 	
 	if is_on_floor():
-		print("Available stances: ", stances.keys())  # Debug line
 		for stance in stances.keys():
 			if InputMap.has_action(stance) and event.is_action_pressed(stance):
 				set_stance(stance)

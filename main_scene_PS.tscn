@@ -1,0 +1,521 @@
+[gd_scene load_steps=56 format=3 uid="uid://cjd7cfjt1h600"]
+
+[ext_resource type="Material" uid="uid://cpdpw14yr3gg8" path="res://GameModules/Environment/whitebox.material" id="1_yo1v0"]
+[ext_resource type="Material" uid="uid://devfmiypql8kc" path="res://GameModules/Environment/whitebox_dark.material" id="2_0bvfs"]
+[ext_resource type="Script" uid="uid://dkxca73w5r488" path="res://GameModules/Player/Player.gd" id="3_sjfb1"]
+[ext_resource type="Resource" uid="uid://f2c3g2k5oidj" path="res://GameModules/Player/JumpStates/air_jump.tres" id="4_fowen"]
+[ext_resource type="Resource" uid="uid://b1mynjpc0mwvp" path="res://GameModules/Player/JumpStates/ground_jump.tres" id="5_nxjsm"]
+[ext_resource type="Script" uid="uid://bb8htr7kgmjbb" path="res://GameModules/Player/movement_controller.gd" id="6_08421"]
+[ext_resource type="Script" uid="uid://dumf5mot4ey3o" path="res://GameModules/Player/animation_controller.gd" id="7_cndbd"]
+[ext_resource type="Script" uid="uid://b6pho7n5ym71e" path="res://GameModules/Player/stance.gd" id="8_em7ur"]
+[ext_resource type="Resource" uid="uid://d1r1tgmafqsly" path="res://GameModules/Player/MovementStates/upright/upright_idle.tres" id="9_wph82"]
+[ext_resource type="Resource" uid="uid://dfjf8bepg1ura" path="res://GameModules/Player/MovementStates/upright/upright_walk.tres" id="10_wsfpu"]
+[ext_resource type="Resource" uid="uid://bst4ytials11d" path="res://GameModules/Player/MovementStates/upright/upright_run.tres" id="11_t56q5"]
+[ext_resource type="Resource" uid="uid://dhetjuk4dx6ke" path="res://GameModules/Player/MovementStates/stealth/stealth_idle.tres" id="12_xdqkk"]
+[ext_resource type="Resource" uid="uid://f75acjtq1s1p" path="res://GameModules/Player/MovementStates/stealth/stealth_walk.tres" id="13_25bs7"]
+[ext_resource type="Resource" uid="uid://b8gxgwxgcffn3" path="res://GameModules/Player/MovementStates/crouch/crouch_idle.tres" id="14_onmi0"]
+[ext_resource type="PackedScene" uid="uid://bfqn1qxjj3a62" path="res://GameModules/Player/PS_Gurl/PS_gurl_master.tscn" id="15_yo1v0"]
+[ext_resource type="Shader" uid="uid://it2eb0uoqfwk" path="res://GameModules/Player/PS_Gurl/PS_FlatColor2Sided.tres" id="16_0bvfs"]
+[ext_resource type="Script" uid="uid://b26fyuptatgt8" path="res://GameModules/Player/camera_controller.gd" id="16_hk28f"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4sd4o"]
+sky_top_color = Color(0.521569, 0.807843, 1, 1)
+sky_horizon_color = Color(0.717647, 0.866667, 0.968627, 1)
+ground_bottom_color = Color(0.717647, 0.866667, 0.968627, 1)
+ground_horizon_color = Color(0.717647, 0.866667, 0.968627, 1)
+
+[sub_resource type="Sky" id="Sky_a6d52"]
+sky_material = SubResource("ProceduralSkyMaterial_4sd4o")
+
+[sub_resource type="Environment" id="Environment_l6sxk"]
+background_mode = 2
+sky = SubResource("Sky_a6d52")
+ambient_light_source = 2
+ambient_light_color = Color(0.615686, 0.615686, 0.615686, 0.721569)
+ambient_light_sky_contribution = 0.0
+tonemap_mode = 2
+glow_enabled = true
+glow_normalized = true
+glow_strength = 0.75
+fog_light_color = Color(0.168627, 0.145098, 0.254902, 1)
+fog_density = 0.0
+volumetric_fog_emission = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0bvfs"]
+render_priority = 0
+shader = ExtResource("16_0bvfs")
+shader_parameter/BackFace = Color(0, 0, 0, 1)
+shader_parameter/FrontFace = Color(0.135274, 0.169874, 0.234446, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sjfb1"]
+render_priority = 0
+shader = ExtResource("16_0bvfs")
+shader_parameter/BackFace = Color(0, 0, 0, 1)
+shader_parameter/FrontFace = Color(0.0676126, 0.349421, 0.509113, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fowen"]
+render_priority = 0
+shader = ExtResource("16_0bvfs")
+shader_parameter/BackFace = Color(0, 0, 0, 1)
+shader_parameter/FrontFace = Color(0.133333, 0.168627, 0.235294, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_08421"]
+render_priority = 0
+shader = ExtResource("16_0bvfs")
+shader_parameter/BackFace = Color(0.851341, 0.596477, 0.584912, 1)
+shader_parameter/FrontFace = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cndbd"]
+render_priority = 0
+shader = ExtResource("16_0bvfs")
+shader_parameter/BackFace = Color(0, 0, 0, 1)
+shader_parameter/FrontFace = Color(0.27451, 0.623529, 0.843137, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nxjsm"]
+render_priority = 0
+shader = ExtResource("16_0bvfs")
+shader_parameter/BackFace = Color(0.53367, 0, 0.248159, 1)
+shader_parameter/FrontFace = Color(0.904562, 0, 0.303958, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_em7ur"]
+render_priority = 0
+shader = ExtResource("16_0bvfs")
+shader_parameter/BackFace = Color(0.27451, 0.623529, 0.843137, 1)
+shader_parameter/FrontFace = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wph82"]
+render_priority = 0
+shader = ExtResource("16_0bvfs")
+shader_parameter/BackFace = Color(0.27451, 0.623529, 0.843137, 1)
+shader_parameter/FrontFace = Color(0.27451, 0.623529, 0.843137, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wsfpu"]
+render_priority = 0
+shader = ExtResource("16_0bvfs")
+shader_parameter/BackFace = Color(0.869573, 0.535972, 0.570741, 1)
+shader_parameter/FrontFace = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t56q5"]
+render_priority = 0
+shader = ExtResource("16_0bvfs")
+shader_parameter/BackFace = Color(0.27451, 0.623529, 0.843137, 1)
+shader_parameter/FrontFace = Color(0.27451, 0.623529, 0.843137, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xdqkk"]
+render_priority = 0
+shader = ExtResource("16_0bvfs")
+shader_parameter/BackFace = Color(0, 0, 0, 1)
+shader_parameter/FrontFace = Color(0.133333, 0.168627, 0.235294, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_25bs7"]
+render_priority = 0
+shader = ExtResource("16_0bvfs")
+shader_parameter/BackFace = Color(0.27451, 0.623529, 0.843137, 1)
+shader_parameter/FrontFace = Color(0.27451, 0.623529, 0.843137, 1)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_15s3x"]
+animation = &"falling"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xln3g"]
+animation = &"air_jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3vqed"]
+animation = &"jump"
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_oux75"]
+fadein_time = 0.15
+fadeout_time = 0.5
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2asgt"]
+animation = &"Plant"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r0dd4"]
+animation = &"Plant"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_ny4iy"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_2asgt")
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_r0dd4")
+blend_point_1/pos = 1.0
+min_space = 0.0
+snap = 1.0
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_wkvd5"]
+fadein_time = 0.15
+fadeout_time = 0.5
+autorestart_delay = 0.1
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_c8rby"]
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_2ywac"]
+
+[sub_resource type="Curve" id="Curve_wpw1s"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_x5vxo"]
+xfade_time = 0.15
+xfade_curve = SubResource("Curve_wpw1s")
+input_0/name = "upright"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "stealth"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+input_2/name = "crouch"
+input_2/auto_advance = false
+input_2/break_loop_at_end = false
+input_2/reset = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kss0i"]
+animation = &"stealth_idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_obja3"]
+animation = &"RunHoldHat"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_ltqii"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_kss0i")
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_obja3")
+blend_point_1/pos = 1.0
+min_space = 0.0
+snap = 1.0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1l06w"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h6gsn"]
+animation = &"Run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rpl48"]
+animation = &"Walk"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5ga2e"]
+animation = &"RunHoldHat"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_pyy1o"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_1l06w")
+blend_point_0/pos = 0.0
+blend_point_1/node = SubResource("AnimationNodeAnimation_h6gsn")
+blend_point_1/pos = 2.0
+blend_point_2/node = SubResource("AnimationNodeAnimation_rpl48")
+blend_point_2/pos = 1.0
+blend_point_3/node = SubResource("AnimationNodeAnimation_5ga2e")
+blend_point_3/pos = 3.0
+min_space = 0.0
+max_space = 3.0
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_wcl6t"]
+graph_offset = Vector2(-33.3569, 462.384)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_3vqed")
+nodes/Animation/position = Vector2(1226.67, 973.333)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_15s3x")
+"nodes/Animation 2/position" = Vector2(893.333, 666.667)
+"nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_xln3g")
+"nodes/Animation 3/position" = Vector2(1440, 986.667)
+nodes/air_jump/node = SubResource("AnimationNodeOneShot_oux75")
+nodes/air_jump/position = Vector2(1626.67, 680)
+nodes/crouch_movement_blend/node = SubResource("AnimationNodeBlendSpace1D_ny4iy")
+nodes/crouch_movement_blend/position = Vector2(173.333, 1120)
+nodes/ground_jump/node = SubResource("AnimationNodeOneShot_wkvd5")
+nodes/ground_jump/position = Vector2(1426.67, 680)
+nodes/movement_anim_speed/node = SubResource("AnimationNodeTimeScale_c8rby")
+nodes/movement_anim_speed/position = Vector2(826.667, 853.333)
+nodes/on_floor_blend/node = SubResource("AnimationNodeBlend2_2ywac")
+nodes/on_floor_blend/position = Vector2(1213.33, 680)
+nodes/output/position = Vector2(2160, 906.667)
+nodes/stance_transition/node = SubResource("AnimationNodeTransition_x5vxo")
+nodes/stance_transition/position = Vector2(626.667, 853.333)
+nodes/stealth_movement_blend/node = SubResource("AnimationNodeBlendSpace1D_ltqii")
+nodes/stealth_movement_blend/position = Vector2(173.333, 906.667)
+nodes/upright_movement_blend/node = SubResource("AnimationNodeBlendSpace1D_pyy1o")
+nodes/upright_movement_blend/position = Vector2(160, 666.667)
+node_connections = [&"air_jump", 0, &"ground_jump", &"air_jump", 1, &"Animation 3", &"ground_jump", 0, &"on_floor_blend", &"ground_jump", 1, &"Animation", &"movement_anim_speed", 0, &"stance_transition", &"on_floor_blend", 0, &"Animation 2", &"output", 0, &"movement_anim_speed", &"stance_transition", 0, &"upright_movement_blend", &"stance_transition", 1, &"stealth_movement_blend", &"stance_transition", 2, &"crouch_movement_blend"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eyiaf"]
+radius = 0.240196
+height = 1.68448
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_47wx7"]
+radius = 0.45
+height = 0.94
+
+[node name="MainScene" type="Node3D"]
+
+[node name="Level" type="Node" parent="."]
+
+[node name="Floor" type="CSGBox3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0128539, -0.491257, 0.0070281)
+material_override = ExtResource("1_yo1v0")
+use_collision = true
+size = Vector3(1000, 1, 1000)
+
+[node name="Wall" type="CSGBox3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 14)
+material_override = ExtResource("2_0bvfs")
+use_collision = true
+size = Vector3(10, 2, 4)
+
+[node name="Wall12" type="CSGBox3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 1.5, 8.5)
+material_override = ExtResource("2_0bvfs")
+use_collision = true
+size = Vector3(3, 1, 1)
+
+[node name="Wall13" type="CSGBox3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 1.25, 8.5)
+material_override = ExtResource("2_0bvfs")
+use_collision = true
+size = Vector3(3, 1.5, 1)
+
+[node name="Wall2" type="CSGBox3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 3, 14)
+material_override = ExtResource("2_0bvfs")
+use_collision = true
+size = Vector3(7, 2, 2)
+
+[node name="Wall3" type="CSGBox3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 6, 18)
+material_override = ExtResource("2_0bvfs")
+use_collision = true
+size = Vector3(3, 2, 2)
+
+[node name="Wall4" type="CSGBox3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 8, 22)
+material_override = ExtResource("2_0bvfs")
+use_collision = true
+size = Vector3(3, 2, 2)
+
+[node name="Wall5" type="CSGBox3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 8.5, 27)
+material_override = ExtResource("2_0bvfs")
+use_collision = true
+size = Vector3(5, 1, 4)
+
+[node name="Wall6" type="CSGBox3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 12.5, 27.5)
+material_override = ExtResource("2_0bvfs")
+use_collision = true
+size = Vector3(3, 1, 3)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_l6sxk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 4.67694, 0)
+visible = false
+light_energy = 0.7
+shadow_enabled = true
+shadow_opacity = 0.45
+sky_mode = 1
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.965926, -0.0771301, -0.247059, 0.0780351, 0.996932, -0.00614147, 0.246775, -0.0133471, 0.968981, 0, 4.67694, 0)
+visible = false
+light_energy = 0.03
+sky_mode = 1
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.457221, 0)
+collision_layer = 0
+floor_snap_length = 0.0
+script = ExtResource("3_sjfb1")
+jump_states = {
+"air_jump": ExtResource("4_fowen"),
+"ground_jump": ExtResource("5_nxjsm")
+}
+stances = {
+"crouch": NodePath("Stances/crouch"),
+"prone": NodePath(""),
+"stealth": NodePath("Stances/stealth"),
+"upright": NodePath("Stances/upright")
+}
+
+[node name="MovementController" type="Node" parent="Player" node_paths=PackedStringArray("player", "mesh_root")]
+script = ExtResource("6_08421")
+player = NodePath("..")
+mesh_root = NodePath("../MeshRoot")
+
+[node name="AnimationController" type="Node" parent="Player" node_paths=PackedStringArray("animation_tree", "player")]
+script = ExtResource("7_cndbd")
+animation_tree = NodePath("../MeshRoot/AnimationTree")
+player = NodePath("..")
+
+[node name="Stances" type="Node" parent="Player"]
+
+[node name="upright" type="Node" parent="Player/Stances" node_paths=PackedStringArray("collider", "col_raycast")]
+script = ExtResource("8_em7ur")
+idle_state = ExtResource("9_wph82")
+walk_state = ExtResource("10_wsfpu")
+run_state = ExtResource("11_t56q5")
+collider = NodePath("../../UprightCollision")
+col_raycast = NodePath("../../UprightCollision/RayCast3D")
+
+[node name="stealth" type="Node" parent="Player/Stances" node_paths=PackedStringArray("collider", "col_raycast")]
+script = ExtResource("8_em7ur")
+idle_state = ExtResource("12_xdqkk")
+walk_state = ExtResource("13_25bs7")
+run_state = ExtResource("13_25bs7")
+collider = NodePath("../../UprightCollision")
+col_raycast = NodePath("../../UprightCollision/RayCast3D")
+
+[node name="crouch" type="Node" parent="Player/Stances" node_paths=PackedStringArray("collider", "col_raycast", "higher_stances")]
+script = ExtResource("8_em7ur")
+idle_state = ExtResource("14_onmi0")
+walk_state = ExtResource("14_onmi0")
+run_state = ExtResource("14_onmi0")
+camera_height = 0.85
+collider = NodePath("../../CrouchCollision")
+col_raycast = NodePath("../../CrouchCollision/RayCast3D")
+higher_stances = [NodePath("../upright"), NodePath("../stealth")]
+
+[node name="MeshRoot" type="Node3D" parent="Player"]
+
+[node name="PS_Gurl_Master" parent="Player/MeshRoot" instance=ExtResource("15_yo1v0")]
+
+[node name="Skeleton3D" parent="Player/MeshRoot/PS_Gurl_Master/rig" index="0"]
+bones/0/position = Vector3(-2.02098e-15, 0.815885, -0.0500533)
+bones/0/rotation = Quaternion(0.266729, 2.29781e-07, 6.35931e-08, 0.963772)
+bones/1/rotation = Quaternion(-0.243905, -3.76217e-14, -1.16303e-07, 0.969799)
+bones/2/rotation = Quaternion(-0.0425462, -1.19101e-07, -1.52157e-08, 0.999094)
+bones/3/rotation = Quaternion(-0.0520898, -6.76623e-16, -1.24192e-08, 0.998642)
+bones/4/rotation = Quaternion(0.139212, 3.42558e-14, 3.31908e-08, 0.990263)
+bones/6/rotation = Quaternion(-0.00263135, 1.19209e-07, -3.13672e-10, 0.999997)
+bones/8/position = Vector3(8.54825e-09, 0.815885, -0.0500533)
+bones/8/rotation = Quaternion(-0.181037, -0.709154, -0.416857, 0.539033)
+bones/9/position = Vector3(-1.84128e-08, 0.815885, -0.0500533)
+bones/9/rotation = Quaternion(-0.181037, 0.709154, 0.416857, 0.539033)
+bones/10/position = Vector3(0.0842699, 0.859279, -0.00993945)
+bones/10/rotation = Quaternion(0.994384, 0.0468583, -0.094841, 0.00307039)
+bones/10/scale = Vector3(1, 1, 1)
+bones/11/rotation = Quaternion(-6.40285e-09, 3.00643e-08, 9.13861e-09, 1)
+bones/12/rotation = Quaternion(0.0747385, -3.34142e-07, 7.00787e-08, 0.997203)
+bones/12/scale = Vector3(1, 1, 1)
+bones/13/rotation = Quaternion(3.00351e-08, 7.79983e-08, -7.45058e-09, 1)
+bones/14/rotation = Quaternion(-0.535894, -0.00543665, 0.0485136, 0.842873)
+bones/14/scale = Vector3(1, 1, 1)
+bones/15/rotation = Quaternion(-0.0352282, 0.958432, -0.282947, -0.0103989)
+bones/15/scale = Vector3(1.00001, 1, 1)
+bones/17/position = Vector3(-0.0842699, 0.859279, -0.00993944)
+bones/17/rotation = Quaternion(0.994384, -0.0468584, 0.094841, 0.00307149)
+bones/18/rotation = Quaternion(-1.4028e-08, -2.96859e-09, -2.65136e-08, 1)
+bones/19/rotation = Quaternion(0.0747405, 3.02926e-07, -6.54172e-08, 0.997203)
+bones/19/scale = Vector3(1, 1, 1)
+bones/20/rotation = Quaternion(-2.30502e-08, -9.15024e-08, -3.07336e-08, 1)
+bones/21/rotation = Quaternion(-0.535895, 0.00543671, -0.0485134, 0.842872)
+bones/21/scale = Vector3(1, 0.999999, 1)
+bones/22/rotation = Quaternion(0.0352284, 0.958432, -0.282947, 0.0103988)
+bones/22/scale = Vector3(1.00001, 1, 1)
+bones/24/position = Vector3(0.0146687, 1.29803, 0.0548271)
+bones/24/rotation = Quaternion(-0.579533, -0.36468, -0.320697, 0.654449)
+bones/25/position = Vector3(0.142994, 1.30156, -0.018869)
+bones/25/rotation = Quaternion(-0.101848, -0.0782589, 0.98769, -0.089278)
+bones/26/rotation = Quaternion(-9.31323e-08, 6.05362e-09, 1.20606e-07, 1)
+bones/27/rotation = Quaternion(0.160706, -4.94352e-07, -2.31949e-07, 0.987002)
+bones/27/scale = Vector3(1, 1, 1)
+bones/28/rotation = Quaternion(1.11759e-08, 2.84053e-08, 4.74974e-08, 1)
+bones/29/rotation = Quaternion(-0.0564025, 0.00203208, 0.0359327, 0.997759)
+bones/29/scale = Vector3(1, 1, 1)
+bones/30/position = Vector3(-0.0146687, 1.29803, 0.0548271)
+bones/30/rotation = Quaternion(-0.579533, 0.36468, 0.320697, 0.654449)
+bones/31/position = Vector3(-0.142994, 1.30156, -0.018869)
+bones/31/rotation = Quaternion(0.101848, -0.0782593, 0.98769, 0.089278)
+bones/32/rotation = Quaternion(-1.39698e-08, 7.45057e-09, 2.37487e-08, 1)
+bones/33/rotation = Quaternion(0.160707, 4.60703e-07, 2.48164e-07, 0.987002)
+bones/33/scale = Vector3(1, 1, 1)
+bones/34/rotation = Quaternion(-2.28175e-08, -3.25962e-08, 9.31329e-09, 1)
+bones/35/rotation = Quaternion(-0.0564029, -0.00203213, -0.0359329, 0.997759)
+bones/35/scale = Vector3(1, 1, 1)
+
+[node name="Arm" parent="Player/MeshRoot/PS_Gurl_Master/rig/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_0bvfs")
+
+[node name="Body" parent="Player/MeshRoot/PS_Gurl_Master/rig/Skeleton3D" index="1"]
+surface_material_override/0 = SubResource("ShaderMaterial_sjfb1")
+surface_material_override/1 = SubResource("ShaderMaterial_fowen")
+
+[node name="Foot" parent="Player/MeshRoot/PS_Gurl_Master/rig/Skeleton3D" index="2"]
+surface_material_override/0 = SubResource("ShaderMaterial_08421")
+surface_material_override/1 = SubResource("ShaderMaterial_cndbd")
+
+[node name="Hair" parent="Player/MeshRoot/PS_Gurl_Master/rig/Skeleton3D" index="3"]
+surface_material_override/0 = SubResource("ShaderMaterial_nxjsm")
+
+[node name="Hand" parent="Player/MeshRoot/PS_Gurl_Master/rig/Skeleton3D" index="4"]
+surface_material_override/0 = SubResource("ShaderMaterial_em7ur")
+surface_material_override/1 = SubResource("ShaderMaterial_wph82")
+
+[node name="Hat" parent="Player/MeshRoot/PS_Gurl_Master/rig/Skeleton3D" index="5"]
+surface_material_override/0 = SubResource("ShaderMaterial_wsfpu")
+
+[node name="Head" parent="Player/MeshRoot/PS_Gurl_Master/rig/Skeleton3D" index="6"]
+surface_material_override/0 = SubResource("ShaderMaterial_t56q5")
+
+[node name="Neck" parent="Player/MeshRoot/PS_Gurl_Master/rig/Skeleton3D" index="7"]
+surface_material_override/0 = SubResource("ShaderMaterial_xdqkk")
+surface_material_override/1 = SubResource("ShaderMaterial_25bs7")
+
+[node name="AnimationTree" type="AnimationTree" parent="Player/MeshRoot"]
+root_node = NodePath("../PS_Gurl_Master")
+tree_root = SubResource("AnimationNodeBlendTree_wcl6t")
+anim_player = NodePath("../PS_Gurl_Master/AnimationPlayer")
+parameters/air_jump/active = false
+parameters/air_jump/internal_active = false
+parameters/air_jump/request = 0
+parameters/crouch_movement_blend/blend_position = 0.0
+parameters/ground_jump/active = false
+parameters/ground_jump/internal_active = false
+parameters/ground_jump/request = 0
+parameters/movement_anim_speed/scale = 1.0
+parameters/on_floor_blend/blend_amount = 1.0
+parameters/stance_transition/current_state = "upright"
+parameters/stance_transition/transition_request = ""
+parameters/stance_transition/current_index = 0
+parameters/stealth_movement_blend/blend_position = 0.0
+parameters/upright_movement_blend/blend_position = 0.0
+
+[node name="CamRoot" type="Node3D" parent="Player" node_paths=PackedStringArray("player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
+script = ExtResource("16_hk28f")
+player = NodePath("..")
+
+[node name="CamYaw" type="Node3D" parent="Player/CamRoot"]
+
+[node name="CamPitch" type="Node3D" parent="Player/CamRoot/CamYaw"]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 0.949655, -0.313296, 0, 0.313296, 0.949655, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player/CamRoot/CamYaw/CamPitch"]
+transform = Transform3D(-1, -2.66454e-15, -5.76205e-08, -1.77636e-15, 1, 0, 8.74229e-08, 0, -1, -0.104642, -0.429463, -14.8726)
+current = true
+fov = 25.4
+
+[node name="UprightCollision" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.847442, 0)
+visible = false
+shape = SubResource("CapsuleShape3D_eyiaf")
+
+[node name="RayCast3D" type="RayCast3D" parent="Player/UprightCollision"]
+target_position = Vector3(0, 1.02, 0)
+
+[node name="CrouchCollision" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47, 0)
+shape = SubResource("CapsuleShape3D_47wx7")
+disabled = true
+
+[node name="RayCast3D" type="RayCast3D" parent="Player/CrouchCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+target_position = Vector3(0, 0.46, 0)
+
+[connection signal="changed_movement_direction" from="Player" to="Player/MovementController" method="_on_set_movement_direction"]
+[connection signal="changed_movement_state" from="Player" to="Player/MovementController" method="_on_set_movement_state"]
+[connection signal="changed_movement_state" from="Player" to="Player/AnimationController" method="_on_set_movement_state"]
+[connection signal="changed_movement_state" from="Player" to="Player/CamRoot" method="_on_set_movement_state"]
+[connection signal="changed_stance" from="Player" to="Player/AnimationController" method="_on_set_stance"]
+[connection signal="changed_stance" from="Player" to="Player/CamRoot" method="_on_set_stance"]
+[connection signal="pressed_jump" from="Player" to="Player/MovementController" method="_jump"]
+[connection signal="pressed_jump" from="Player" to="Player/AnimationController" method="_jump"]
+[connection signal="set_cam_rotation" from="Player/CamRoot" to="Player/MovementController" method="_on_set_cam_rotation"]
+
+[editable path="Player/MeshRoot/PS_Gurl_Master"]
